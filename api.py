@@ -87,9 +87,7 @@ def consulta(cidade_base: str, data_inicio: str, data_fim: str):
 
                 data_evento = datetime.strptime(data_evento, "%Y-%m-%d").date()
 
-                dados2 = [cidade_base, data_inicio, data_fim, magnitude, menor_distancia, localizacao, data_evento]
-
-                dados2 = dados2.json.loads(response.content)
+                dados2 = (cidade_base, data_inicio, data_fim, magnitude, menor_distancia, localizacao, data_evento)
 
                 return dados2
 
