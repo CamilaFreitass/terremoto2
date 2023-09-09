@@ -10,6 +10,7 @@ from fastapi.responses import RedirectResponse
 
 app = FastAPI()
 
+
 DEBUG = config('DEBUG', cast=bool, default=False)
 
 key = config('key')
