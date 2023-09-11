@@ -12,6 +12,8 @@ app = FastAPI()
 
 DEBUG = config('DEBUG', cast=bool, default=False)
 
+ALLOWED_HOSTS = ['*']
+
 key = config('key')
 
 def is_valid_data(data_str):
