@@ -10,7 +10,6 @@ from fastapi.responses import RedirectResponse
 
 app = FastAPI()
 
-
 DEBUG = config('DEBUG', cast=bool, default=False)
 
 key = config('key')
@@ -94,3 +93,4 @@ def consulta(cidade_base: str, data_inicio: str, data_fim: str):
 
             else:
                 raise HTTPException(status_code=400, detail="Cidade inválida. Digite uma cidade válida!")
+
