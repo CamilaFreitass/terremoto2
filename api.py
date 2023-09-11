@@ -12,15 +12,8 @@ app = FastAPI()
 
 DEBUG = config('DEBUG', cast=bool, default=False)
 
-if not DEBUG:
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-    SECURE_SSL_REDIRECT = True
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
-
-ALLOWED_HOSTS = ['*']
-
 key = config('key')
+
 
 def is_valid_data(data_str):
     try:
