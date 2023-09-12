@@ -88,10 +88,12 @@ def consulta(cidade_base: str, data_inicio: str, data_fim: str):
 
                 data_evento = datetime.strptime(data_evento, "%Y-%m-%d").date()
 
-                dados2 = (cidade_base, data_inicio, data_fim, magnitude, menor_distancia, localizacao, data_evento)
+                dados2 = {"cidade de referência":cidade_base, "Data de inicio":data_inicio, "Data de fim":data_fim,
+                          "Magnitude":magnitude, "Menor distância":menor_distancia, "Localização":localizacao, "Data do evento":data_evento}
 
                 return dados2
 
             else:
                 raise HTTPException(status_code=400, detail="Cidade inválida. Digite uma cidade válida!")
+
 
